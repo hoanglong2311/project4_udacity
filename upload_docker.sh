@@ -39,7 +39,7 @@ fi
 
 
 # Get information about the image by filters the lines containing "project-ml, only the lines representing Docker images with "project-ml" in their names.
-image_info=$(docker image list | grep 'project-ml' | xargs)
+image_info=$(docker image list | grep 'project-ml')
 
 # Extracts the image name from the image_info variable from above processing. 
 image_name=$(echo "$image_info")
