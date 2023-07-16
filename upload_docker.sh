@@ -17,19 +17,19 @@ docker login
 image_tagged=$(docker image list --filter=reference="$docker_path/project-ml" | grep 'project-ml' | xargs)
 if [[ -n $image_tagged ]]; then
   echo "Image already tagged, remove the tagged image."
-  # Extract the image name from the tagged image information
+
   name=$(echo "$image_tagged" | cut -f 1 -d " ")
-  # Extract the image tag from the tagged image information
+
   tag=$(echo "$image_tagged" | cut -f 2 -d " ")
-  # Remove the tagged image forcefully
+
   docker image remove --force "$name":"$tag"
 fi
 
-# Get information about the image by substring 
+# Get information about the image by filters the lines containing "project-ml, only the lines representing Docker images with "project-ml" in their names.
 image_info=$(docker image list | grep 'project-ml' | xargs)
-# Extract the image name from the image information
+# Extracts the image name from the image_info variable. 
 image_name=$(echo "$image_info" | cut -f 1 -d " ")
-# Extract the image tag from the image information
+# Extracts the image tag from the image_info variable
 image_tag=$(echo "$image_info" | cut -f 2 -d " ")
 
 # Tag the image with the specified repository and tag

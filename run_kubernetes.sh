@@ -4,7 +4,7 @@
 
 # Step 1:
 # This is your Docker ID/path
-docker_path=vuvm1
+docker_path=de150191
 
 # Step 2
 # Create a deployment in Kubernetes with the specified image
