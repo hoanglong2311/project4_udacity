@@ -3,6 +3,7 @@ from flask.logging import create_logger
 import logging
 
 import pandas as pd
+import joblib
 from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
@@ -62,7 +63,8 @@ def predict():
     scaled_payload = scale(inference_payload)
     # get an output prediction from the pretrained model, clf
     prediction = list(clf.predict(scaled_payload))
-    # TO DO:  Log the output prediction value
+    # Log the output prediction value
+    LOG.info(f"PREDICTION: {prediction}")
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
