@@ -15,10 +15,10 @@ docker login
 # Check if the image is already tagged and remove it if necessary
 
 # Check if the image with the specified reference is already tagged
-image_tagged=$(docker image list --filter=reference="$docker_path/project-ml" | grep 'project-ml' | xargs)
+image_tagged=$(docker image list --filter=reference="$docker_path/project-ml" | grep 'project-ml')
 
 # If the image is already tagged, remove the tagged image
-if [[  -n $image_tagged  ]]; then
+if [ [  -n $image_tagged  ] ] ; then
 
 # print out this image is already tagged in docker hub and will be remove tag name
   echo "Image already tagged, remove the tagged image."
