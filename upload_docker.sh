@@ -24,10 +24,14 @@ if [[  -n $image_tagged  ]]; then
   echo "Image already tagged, remove the tagged image."
 
   # Extract the image name from the tagged image information
-  name=$(echo "$image_tagged" | cut -f 1 -d " ")
+  name=$(echo "$image_tagged")
+  # Cut strung in name when get from image_tagged
+  name=$(echo "$name" | cut -f 1 -d " ")
 
   # Extract the image tag from the tagged image information
-  tag=$(echo "$image_tagged" | cut -f 2 -d " ")
+  tag=$(echo "$image_tagged")
+  # Cut String for tag from image_tagged to create a new tag
+  tag=$(echo "$tag" | cut -f 2 -d " ")
 
   # Remove the tagged image forcefully
   docker image remove --force "$name":"$tag"
@@ -38,10 +42,14 @@ fi
 image_info=$(docker image list | grep 'project-ml' | xargs)
 
 # Extracts the image name from the image_info variable from above processing. 
-image_name=$(echo "$image_info" | cut -f 1 -d " ")
+image_name=$(echo "$image_info")
+#Substring for image name from image_info
+image_name=$(echo "$image_name" | cut -f 1 -d " ")
 
 # Extracts the image tag from the image_info variable from above processing.
-image_tag=$(echo "$image_info" | cut -f 2 -d " ")
+image_tag=$(echo "$image_info")
+#Substring for image tag from image_info
+image_tag=$(echo "$image_tag" | cut -f 2 -d " ")
 
 # Create tag and taged for images before it push to doicker hub
 docker image tag "$image_name:$image_tag" "$docker_path/$image_name:$image_tag"
