@@ -4,7 +4,6 @@ import logging
 import joblib
 
 import pandas as pd
-
 from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
@@ -66,7 +65,7 @@ def predict():
     prediction = list(clf.predict(scaled_payload))
 
     # Confirm value of prediction by console log its value
-    LOG.info(f"PREDICTION: {prediction}")
+    LOG.info(f"PREDICTION VALUE IS: {prediction}")
 
     # Return result of prediction as json 
     return jsonify({'prediction': prediction})
