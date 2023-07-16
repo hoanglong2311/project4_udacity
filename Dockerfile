@@ -11,7 +11,8 @@ COPY . app.py /app/
 ## Step 3:
 # Install packages from requirements.txt
 # Install package with all package define in requirement.txt ti get reight enviroment
-RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
 ## Step 4:
 # Expose port 80
