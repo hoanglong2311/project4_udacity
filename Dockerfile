@@ -11,6 +11,7 @@ COPY . app.py /app/
 ## Step 3:
 # Install packages from requirements.txt
 # Install package with all package define in requirement.txt ti get reight enviroment
+# hadolint ignore=DL3013
 RUN pip install --no-cache-dir --upgrade pip && \
 pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
