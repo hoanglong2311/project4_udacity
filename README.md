@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/hoanglong2311/project4_udacity.svg?style=svg)](https://circleci.com/gh/hoanglong2311/project4_udacity)
+[![CircleCI](https://circleci.com/gh/hoanglong2311/project4_udacity.svg?style=svg)](https://circleci.com/gh/hoanglong2311/project4_udacity)([https://dl.circleci.com/status-badge/redirect/gh/hoanglong2311/project4_udacity/tree/master](https://dl.circleci.com/status-badge/redirect/gh/hoanglong2311/project4_udacity/tree/main))
 
 
 ## Project Overview
